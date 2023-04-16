@@ -8,7 +8,7 @@
 
 
 # Easy Way
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy=https://github.com/matrixbotz0/ForwardBot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 # Normal Way
 ```python3
