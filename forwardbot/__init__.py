@@ -66,7 +66,6 @@ async def handler(event):
         pass
         
 from os import environ
-class Config(object):
     API_ID = environ.get("API_ID", None)
     API_HASH = environ.get("API_HASH", None)
     BOT_TOKEN = environ.get("BOT_TOKEN", None)
