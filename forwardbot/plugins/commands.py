@@ -1,4 +1,4 @@
-from forwardbot import Config
+from forwardbot import HELP_MSG, SUDO_USERS
 from telethon.tl.functions.users import GetFullUserRequest
 from forwardbot.utils import forwardbot_cmd
 from forwardbot.utils import is_sudo
@@ -8,8 +8,8 @@ MessageCount = 0
 
 BOT_STATUS = "0"
 status = set(int(x) for x in (BOT_STATUS).split())
-help_msg = Config.HELP_MSG
-sudo_users = Config.SUDO_USERS
+help_msg = HELP_MSG
+sudo_users = SUDO_USERS
 
 @forwardbot_cmd("start", is_args=False)
 async def start(event):
