@@ -1,7 +1,7 @@
 from telethon import events
 from forwardbot import bot
-from forwardbot.BotConfig import Config
-bothandler = Config.COMMAND_HAND_LER
+from forwardbot import COMMAND_HAND_LER, SUDO_USERS
+bothandler = COMMAND_HAND_LER
 def forwardbot_cmd(add_cmd, is_args=False):
     def cmd(func):
         if is_args:
@@ -14,7 +14,7 @@ def forwardbot_cmd(add_cmd, is_args=False):
     return cmd
 
 async def is_sudo(event):
-    if str(event.sender_id) in Config.SUDO_USERS:
+    if str(event.sender_id) in SUDO_USERS:
         return True
     else:
         return False
@@ -45,7 +45,6 @@ def start_forwardbot(shortname):
         mod = importlib.util.module_from_spec(spec)
         mod.forwardbot_cmd = forwardbot_cmd
         mod.forwardbot = bot
-        mod.Config = Config
         spec.loader.exec_module(mod)
         sys.modules["forwardbot.plugins" + shortname] = mod
         print("IMPORTED " + shortname)
