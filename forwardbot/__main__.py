@@ -1,4 +1,4 @@
-from forwardbot.BotConfig import Config
+from forwardbot import BOT_TOKEN
 from forwardbot import bot
 from forwardbot import client
 from pathlib import Path
@@ -10,7 +10,7 @@ if len(argv) not in (1, 3, 4):
     bot.disconnect()
     client.disconnect()
 else:
-    bot.start(bot_token=Config.BOT_TOKEN)
+    bot.start(bot_token=BOT_TOKEN)
     client.start()
 
 path = "forwardbot/plugins/*.py"
