@@ -1,12 +1,20 @@
 import sys
 from logging import DEBUG, WARNING, basicConfig, getLogger, INFO
-import os
+from os import environ
 
 from telethon import TelegramClient
 from distutils.util import strtobool as sb
 from telethon import events
 from telethon.sessions import StringSession
 ENV = True
+
+#important variables
+API_ID = environ.get("API_ID", None)
+API_HASH = environ.get("API_HASH", None)
+BOT_TOKEN = environ.get("BOT_TOKEN", None)
+STRING_SESSION = environ.get("STRING", None)
+SUDO_USERS = environ.get("SUDO_USERS", None)
+COMMAND_HAND_LER = environ.get("COMMAND_HAND_LER", "^/")
 
 bot = TelegramClient('bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
 
@@ -59,14 +67,8 @@ async def handler(event):
         os.execl(sys.executable, sys.executable, *sys.argv)
     except:
         pass
-        
-from os import environ
-API_ID = environ.get("API_ID", None)
-API_HASH = environ.get("API_HASH", None)
-BOT_TOKEN = environ.get("BOT_TOKEN", None)
-STRING_SESSION = environ.get("STRING", None)
-SUDO_USERS = environ.get("SUDO_USERS", None)
-COMMAND_HAND_LER = environ.get("COMMAND_HAND_LER", "^/")
+
+
 
 HELP_MSG = """
 The Commands in the bot are:
